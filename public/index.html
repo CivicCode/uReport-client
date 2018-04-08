@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+    <!--
+      bloomington-gov.css was compiled as a quick rip-off of the city's css
+    -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Roboto:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="%PUBLIC_URL%/bloomington-gov.css" media="all" />
+  </head>
+  <body>
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+      <input  id="hamburger" type="checkbox" />
+      <label for="hamburger"></label>
+      <a id="feedback" href="https://bloomington.in.gov/open311-proxy/embed?client=2;service_code=53">Feedback</a>
+      <header>
+        <div class="container">
+          <section id="block-cob-branding">
+            <h1><a href="/" title="Home" rel="home">City of Bloomington, Indiana</a></h1>
+            <h2><a href="/" title="Home" rel="home">Mayor John Hamilton</a></h2>
+          </section>
+          <section class="search-block-form" data-drupal-selector="search-block-form" id="block-searchform" role="search">
+            <div>
+              <form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+                <div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">
+                  <label for="edit-keys" class="visually-hidden">Search</label>
+                  <input title="Enter the terms you wish to search for." placeholder="Type here" data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search" />
+                </div>
+                <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Search" class="button js-form-submit form-submit" />
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </header>
+      <nav id="nav1">
+        <div class="container">
+          <a class="about"    href="/about">About Bloomington</a>
+          <a class="city"     href="/city">City Government</a>
+          <a class="news"     href="/news">News &amp; Events</a>
+          <a class="services" href="/services">Services &amp; Guides</a>
+        </div>
+      </nav>
+      <main>
+        <a id="main-content" tabindex="-1"></a>
+        <div id="banner"></div>
+        <div id="breadcrumb">
+          <div class="container">
+            <section id="block-cob-breadcrumbs">
+              <div>
+                <nav role="navigation" aria-labelledby="system-breadcrumb">
+                  <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+                </nav>
+              </div>
+            </section>
+            <section id="block-cob-page-title">
+              <div>
+                <h1><span>uReport: Request a City Service</span>
+                </h1>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div id="highlighted">
+          <div class="container">
+          </div>
+        </div>
+        <div id="content">
+          <div class="container">
+            <section id="block-cob-cob-system-main">
+              <div>
+                <article role="article" class="guide_page full">
+                  <div id="intro">
+                    <div>
+                      <div class="text_with_summary">
+                        <div>
+                          <p>Use the form below to notify the City of community issues, such as potholes, graffiti, malfunctioning street lights, and more. When you submit your reports or comment to the City it will be sent to the appropriate department. Choose a category to get started!</p>
+                          <p>You may also send an e-mail directly to info@bloomington.in.gov, call the City at 812.349.3400, or view other ways to <a href="/contact">contact the City of Bloomington</a>.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <aside>
+                      <header>
+                        <h2>Report An Issue</h2>
+                      </header>
+                      <div class="text_long">
+                        <div>
+                          <p>Select a report to send to the City for action.</p>
+                          <p dir="ltr"><strong>PLEASE NOTE:  This system is not for reporting emergencies or imminent safety hazards. </strong></p>
+                          <ul>
+                            <li dir="ltr">
+                              <p dir="ltr">If this is an emergency, please immediately dial 911 for assistance.   Examples of an emergency include if you see a crime in progress, a fire, someone is experiencing a serious health issue or you witness a traffic accident.</p>
+                            </li>
+                            <li dir="ltr">
+                              <p dir="ltr">If this is a safety hazard that could cause an injury,  please immediately call City Utilities Control at 812-339-1444.  This number is staffed 24 hours a day. The appropriate staff will be dispatched to address the safety hazard. Examples of this could include a fallen branch blocking a road, downed power line, or a displaced manhole cover.</p>
+                            </li>
+                          </ul>
+                          <p dir="ltr">When in doubt, please call, even if you are not sure.</p>
+                          <p dir="ltr">Staff will be happy to assist you!</p>
+                        </div>
+                      </div>
+                    </aside>
+                  </div>
+                  <div>
+                  </div>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+      <div id="root"></div>
+      <!--
+        This HTML file is a template.
+        If you open it directly in the browser, you will see an empty page.
+
+        You can add webfonts, meta tags, or analytics to this file.
+        The build step will place the bundled scripts into the <body> tag.
+
+        To begin the development, run `npm start` or `yarn start`.
+        To create a production bundle, use `npm run build` or `yarn build`.
+      -->
+      <footer>
+        <div class="container">
+          <div class="contactInfo">
+              <dl><dt>Address</dt>
+                  <dd><address><a href="https://bloomington.in.gov/city/showers-city-hall">401 N Morton St
+  Bloomington IN 47404</a></address>
+                  </dd>
+              </dl>
+              <dl><dt>Phone</dt>
+                  <dd><a href="tel:812-349-3400" class="phone" title="Phone">(812)349-3400</a></dd>
+              </dl>
+          </div>
+          <div class="contactInfo">
+              <dl><dt>Facebook</dt>
+                  <dd><a href="https://www.facebook.com/cityofbloomington" class="facebook">Connect on Facebook</a></dd>
+              </dl>
+              <dl><dt>Twitter</dt>
+                  <dd><a href="http://twitter.com/citybloomington" class="twitter">Follow us on Twitter</a></dd>
+              </dl>
+          </div>
+          <div>
+              <nav>
+                  <a href="/departments/hr/jobs">City Jobs</a>
+                  <a href="https://bloomington.in.gov/subscribe">Subscribe to email lists</a>
+                  <a href="/web">Web Policy</a>
+                  <a href="https://bloomington.in.gov/ureport">Report A Problem</a>
+                  <a href="https://apps.bloomington.in.gov/kb">City Intranet</a>
+                  <a href="/">Home</a>
+                  <a href="/caslogin">Login</a>
+              </nav>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

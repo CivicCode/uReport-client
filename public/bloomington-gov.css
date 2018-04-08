@@ -1,0 +1,2037 @@
+/* These are taken from the current bloomington.in.gov website */
+
+/**
+ * @file
+ * Throbber.
+ */
+
+.ajax-progress {
+  display: inline-block;
+  padding: 1px 5px 2px 5px;
+}
+[dir="rtl"] .ajax-progress {
+  float: right;
+}
+.ajax-progress-throbber .throbber {
+  background: transparent url(../../../../misc/throbber-active.gif) no-repeat 0 center;
+  display: inline;
+  padding: 1px 5px 2px;
+}
+.ajax-progress-throbber .message {
+  display: inline;
+  padding: 1px 5px 2px;
+}
+tr .ajax-progress-throbber .throbber {
+  margin: 0 2px;
+}
+.ajax-progress-bar {
+  width: 16em;
+}
+
+/* Full screen throbber */
+.ajax-progress-fullscreen {
+  /* Can't do center:50% middle: 50%, so approximate it for a typical window size. */
+  left: 49%; /* LTR */
+  position: fixed;
+  top: 48.5%;
+  z-index: 1000;
+  background-color: #232323;
+  background-image: url(../../../../misc/loading-small.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 7px;
+  height: 24px;
+  opacity: 0.9;
+  padding: 4px;
+  width: 24px;
+}
+[dir="rtl"] .ajax-progress-fullscreen {
+  left: auto;
+  right: 49%;
+}
+
+/**
+ * @file
+ * Alignment classes for text and block level elements.
+ */
+
+.text-align-left {
+  text-align: left;
+}
+.text-align-right {
+  text-align: right;
+}
+.text-align-center {
+  text-align: center;
+}
+.text-align-justify {
+  text-align: justify;
+}
+
+/**
+ * Alignment classes for block level elements (images, videos, blockquotes, etc.)
+ */
+.align-left {
+  float: left;
+}
+.align-right {
+  float: right;
+}
+.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+ * @file
+ * Visual styles for animated throbber.
+ *
+ * @see autocomplete.js
+ */
+
+.js input.form-autocomplete {
+  background-image: url(../../../../misc/throbber-inactive.png);
+  background-position: 100% center; /* LTR */
+  background-repeat: no-repeat;
+}
+.js[dir="rtl"] input.form-autocomplete {
+  background-position: 0% center;
+}
+.js input.form-autocomplete.ui-autocomplete-loading {
+  background-image: url(../../../../misc/throbber-active.gif);
+  background-position: 100% center; /* LTR */
+}
+.js[dir="rtl"] input.form-autocomplete.ui-autocomplete-loading {
+  background-position: 0% center;
+}
+
+/**
+ * @file
+ * Fieldgroup border reset.
+ */
+
+.fieldgroup {
+  border-width: 0;
+  padding: 0;
+}
+
+
+/**
+ * @file
+ * Inline items.
+ */
+
+.container-inline div,
+.container-inline label {
+  display: inline-block;
+}
+/* Details contents always need to be rendered as block. */
+.container-inline .details-wrapper {
+  display: block;
+}
+
+/**
+ * @file
+ * Float clearing.
+ *
+ * Based on the micro clearfix hack by Nicolas Gallagher, with the :before
+ * pseudo selector removed to allow normal top margin collapse.
+ *
+ * @see http://nicolasgallagher.com/micro-clearfix-hack
+ */
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/**
+ * @file
+ * Collapsible details.
+ *
+ * @see collapse.js
+ */
+
+.js details:not([open]) .details-wrapper {
+  display: none;
+}
+
+/**
+ * @file
+ * Utility classes to hide elements in different ways.
+ */
+
+/**
+ * Hide elements from all users.
+ *
+ * Used for elements which should not be immediately displayed to any user. An
+ * example would be collapsible details that will be expanded with a click
+ * from a user. The effect of this class can be toggled with the jQuery show()
+ * and hide() functions.
+ */
+.hidden {
+  display: none;
+}
+
+/**
+ * Hide elements visually, but keep them available for screen readers.
+ *
+ * Used for information required for screen reader users to understand and use
+ * the site where visual display is undesirable. Information provided in this
+ * manner should be kept concise, to avoid unnecessary burden on the user.
+ * "!important" is used to prevent unintentional overrides.
+ */
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
+/**
+ * The .focusable class extends the .visually-hidden class to allow
+ * the element to be focusable when navigated to via the keyboard.
+ */
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  position: static !important;
+  clip: auto;
+  overflow: visible;
+  height: auto;
+  width: auto;
+}
+
+/**
+ * Hide visually and from screen readers, but maintain layout.
+ */
+.invisible {
+  visibility: hidden;
+}
+
+/**
+ * @file
+ * Styles for item list.
+ */
+
+.item-list__comma-list,
+.item-list__comma-list li {
+  display: inline;
+}
+.item-list__comma-list {
+  margin: 0;
+  padding: 0;
+}
+.item-list__comma-list li:after {
+  content: ", ";
+}
+.item-list__comma-list li:last-child:after {
+  content: "";
+}
+
+/**
+ * @file
+ * Utility classes to assist with Javascript functionality.
+ */
+
+/**
+ * For anything you want to hide on page load when JS is enabled, so
+ * that you can use the JS to control visibility and avoid flicker.
+ */
+.js .js-hide {
+  display: none;
+}
+
+/**
+ * For anything you want to show on page load only when JS is enabled.
+ */
+.js-show {
+  display: none;
+}
+.js .js-show {
+  display: block;
+}
+
+/**
+ * @file
+ * Utility class to prevent text wrapping.
+ */
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/*
+ * @file
+ * Contain positioned elements.
+ */
+
+.position-container {
+  position: relative;
+}
+
+/**
+ * @file
+ * Progress behavior.
+ *
+ * @see progress.js
+ */
+
+.progress {
+  position: relative;
+}
+.progress__track {
+  background-color: #fff;
+  border: 1px solid;
+  margin-top: 5px;
+  max-width: 100%;
+  min-width: 100px;
+  height: 16px;
+}
+.progress__bar {
+  background-color: #000;
+  height: 16px;
+  width: 3%;
+  min-width: 3%;
+  max-width: 100%;
+}
+.progress__description,
+.progress__percentage {
+  color: #555;
+  overflow: hidden;
+  font-size: 0.875em;
+  margin-top: 0.2em;
+}
+.progress__description {
+  float: left; /* LTR */
+}
+[dir="rtl"] .progress__description {
+  float: right;
+}
+.progress__percentage {
+  float: right; /* LTR */
+}
+[dir="rtl"] .progress__percentage {
+  float: left;
+}
+.progress--small .progress__track {
+  height: 7px;
+}
+.progress--small .progress__bar {
+  height: 7px;
+  background-size: 20px 20px;
+}
+
+/*
+ * @file
+ * Utility class to remove browser styles, especially for button.
+ */
+
+.reset-appearance {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0 none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  line-height: inherit;
+}
+
+/**
+ * @file
+ * Resizable textareas.
+ */
+
+.resize-none {
+  resize: none;
+}
+.resize-vertical {
+  resize: vertical;
+  min-height: 2em;
+}
+.resize-horizontal {
+  resize: horizontal;
+  max-width: 100%;
+}
+.resize-both {
+  resize: both;
+  max-width: 100%;
+  min-height: 2em;
+}
+
+/**
+ * @file
+ * Table header behavior.
+ *
+ * @see tableheader.js
+ */
+
+table.sticky-header {
+  background-color: #fff;
+  margin-top: 0;
+  z-index: 500;
+  top: 0;
+}
+
+/**
+ * @file
+ * Styles for the system status counter component.
+ */
+
+.system-status-counter__status-icon {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  vertical-align: middle;
+}
+.system-status-counter__status-icon:before {
+  content: "";
+  background-size: 16px;
+  background-position: center 2px;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.system-status-counter__status-icon--error:before {
+  background-image: url(../../../../misc/icons/e32700/error.svg);
+}
+.system-status-counter__status-icon--warning:before {
+  background-image: url(../../../../misc/icons/e29700/warning.svg);
+}
+.system-status-counter__status-icon--checked:before {
+  background-image: url(../../../../misc/icons/73b355/check.svg);
+}
+
+/**
+ * @file
+ * Styles for the system status report counters.
+ */
+
+.system-status-report-counters__item {
+  width: 100%;
+  padding: 0.5em 0;
+  text-align: center;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.063);
+  margin-bottom: 0.5em;
+}
+
+@media screen and (min-width: 60em) {
+  .system-status-report-counters {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+  }
+  .system-status-report-counters__item--half-width {
+    width: 49%;
+  }
+  .system-status-report-counters__item--third-width {
+    width: 33%;
+  }
+}
+
+/**
+ * @file
+ * Default styles for the System Status general info.
+ */
+
+.system-status-general-info__item {
+  border: 1px solid #ccc;
+  margin-top: 1em;
+  padding: 0 1em 1em;
+}
+
+.system-status-general-info__item-title {
+  border-bottom: 1px solid #ccc;
+}
+
+/**
+ * @file
+ * Table drag behavior.
+ *
+ * @see tabledrag.js
+ */
+
+body.drag {
+  cursor: move;
+}
+tr.region-title {
+  font-weight: bold;
+}
+tr.region-message {
+  color: #999;
+}
+tr.region-populated {
+  display: none;
+}
+tr.add-new .tabledrag-changed {
+  display: none;
+}
+.draggable a.tabledrag-handle {
+  cursor: move;
+  float: left; /* LTR */
+  height: 1.7em;
+  margin-left: -1em; /* LTR */
+  overflow: hidden;
+  text-decoration: none;
+}
+[dir="rtl"] .draggable a.tabledrag-handle {
+  float: right;
+  margin-right: -1em;
+  margin-left: 0;
+}
+a.tabledrag-handle:hover {
+  text-decoration: none;
+}
+a.tabledrag-handle .handle {
+  background: url(../../../../misc/icons/787878/move.svg) no-repeat 6px 7px;
+  height: 14px;
+  margin: -0.4em 0.5em 0;
+  padding: 0.42em 0.5em;
+  width: 14px;
+}
+a.tabledrag-handle:hover .handle,
+a.tabledrag-handle:focus .handle {
+  background-image: url(../../../../misc/icons/000000/move.svg);
+}
+.touchevents .draggable td {
+  padding: 0 10px;
+}
+.touchevents .draggable .menu-item__link {
+  display: inline-block;
+  padding: 10px 0;
+}
+.touchevents a.tabledrag-handle {
+  height: 44px;
+  width: 40px;
+}
+.touchevents a.tabledrag-handle .handle {
+  background-position: 40% 19px; /* LTR */
+  height: 21px;
+}
+[dir="rtl"] .touch a.tabledrag-handle .handle {
+  background-position: right 40% top 19px;
+}
+.touchevents .draggable.drag a.tabledrag-handle .handle {
+  background-position: 50% -32px;
+}
+.tabledrag-toggle-weight-wrapper {
+  text-align: right; /* LTR */
+}
+[dir="rtl"] .tabledrag-toggle-weight-wrapper {
+  text-align: left;
+}
+.indentation {
+  float: left; /* LTR */
+  height: 1.7em;
+  margin: -0.4em 0.2em -0.4em -0.4em; /* LTR */
+  padding: 0.42em 0 0.42em 0.6em; /* LTR */
+  width: 20px;
+}
+[dir="rtl"] .indentation {
+  float: right;
+  margin: -0.4em -0.4em -0.4em 0.2em;
+  padding: 0.42em 0.6em 0.42em 0;
+}
+
+/**
+ * @file
+ * Table sort indicator.
+ *
+ * @see tablesort-indicator.html.twig
+ */
+
+.tablesort {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-size: 100%;
+}
+.tablesort--asc {
+  background-image: url(../../../../misc/icons/787878/twistie-down.svg);
+}
+.tablesort--desc {
+  background-image: url(../../../../misc/icons/787878/twistie-up.svg);
+}
+
+/**
+ * @file
+ * Visual styles for a nested tree child.
+ */
+
+div.tree-child {
+  background: url(../../../../misc/tree.png) no-repeat 11px center; /* LTR */
+}
+div.tree-child-last {
+  background: url(../../../../misc/tree-bottom.png) no-repeat 11px center; /* LTR */
+}
+[dir="rtl"] div.tree-child,
+[dir="rtl"] div.tree-child-last {
+  background-position: -65px center;
+}
+div.tree-child-horizontal {
+  background: url(../../../../misc/tree.png) no-repeat -11px center;
+}
+
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+@import 'https://fonts.googleapis.com/css?family=Lora';
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */ }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+/**
+ * Urls are relative to screen.css
+ */
+/**
+ * @see https://en.wikipedia.org/wiki/Web_colors
+ *
+ */
+body {
+  color: #212121;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.125rem; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #212121;
+  font-family: "Lora", serif;
+  font-size: 1.125rem;
+  font-weight: 700; }
+
+h1 {
+  font-size: 1.6667rem;
+  margin: 0 0 .5em; }
+
+h2 {
+  font-size: 1.4rem;
+  margin: 0.5em 0; }
+
+h3 {
+  font-size: 1.25rem;
+  margin: 0.5em 0 0.25em 0; }
+
+h4 {
+  font-size: 1.25rem;
+  margin: 0; }
+
+h5 {
+  margin: 0; }
+
+h6 {
+  margin: 0; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+p {
+  line-height: 1.25em;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 0.5em 0; }
+  p a {
+    color: #183365; }
+
+address {
+  white-space: pre-line; }
+
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+table {
+  margin: 1em 0 1em 0; }
+
+th {
+  font-weight: 700; }
+
+td {
+  padding: 0.25em; }
+
+thead th {
+  text-align: left; }
+
+tbody th {
+  text-align: right; }
+
+fieldset {
+  margin: 0 0 3em 0;
+  padding: 0; }
+
+form {
+  margin: 0 0 .2rem 0; }
+
+legend {
+  color: #212121;
+  display: block;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0;
+  padding: 0 0 0 0; }
+
+label {
+  font-weight: normal; }
+
+@media all and (min-width: 640px) {
+  textarea {
+    width: 55ex;
+    height: 12em; } }
+
+@media print {
+  :root {
+    font-size: 10pt; }
+  h1 {
+    font-size: 1.6667rem;
+    margin: 0.5em 0 0 0; }
+  h2 {
+    font-size: 1.4rem;
+    margin: 0.5em 0 0 0; } }
+
+body > header {
+  background-color: #fff;
+  color: #183365;
+  padding-top: 0.5em;
+  padding-left: 0.5em; }
+  body > header a {
+    color: #183365;
+    font-family: "Roboto", sans-serif; }
+  body > header > .container h1, body > header > .container h2 {
+    display: inline-block;
+    margin: .2em 0;
+    vertical-align: middle; }
+  body > header > .container h1 a {
+    margin-left: 0.5em;
+    font-size: 1.4rem;
+    font-weight: normal;
+    display: inline-block;
+    background: url("") no-repeat left center;
+    background-size: 2.5rem;
+    padding-left: 3rem;
+    line-height: 2.5rem; }
+  body > header > .container h2 {
+    font-size: 1rem;
+    margin: 0 0 0 2em;
+    padding: 0 0 0 2em;
+    border-left: 1px solid #eee4e1; }
+  body > header .utilityBar {
+    position: absolute;
+    right: 10px;
+    top: 10px; }
+    body > header .utilityBar nav {
+      float: right;
+      margin: 0 0 0 1em; }
+
+@media all and (min-width: 640px) {
+  #nav1 {
+    overflow: auto; }
+    #nav1 a {
+      color: #183365;
+      display: block;
+      float: left;
+      margin-right: 0.5em;
+      padding: 0.5em 0.75em; }
+    #nav1 form {
+      float: right; }
+    #nav1 fieldset {
+      margin: 0; }
+    #nav1 input {
+      font-size: 1em;
+      padding: 0.25em; } }
+
+button, .button {
+  font-family: "Roboto", sans-serif;
+  background: #4caf50;
+  border: 1px solid #9e9e9e;
+  border-radius: 0.5em;
+  box-sizing: content-box;
+  color: #fff;
+  display: inline-block;
+  line-height: 1.2em;
+  margin-right: 0.5em;
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  font-weight: normal;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: 0.5em center;
+  background-size: 1em 1em; }
+  button:hover, .button:hover {
+    background-color: #77cc7d;
+    cursor: pointer;
+    text-decoration: none; }
+
+.icon {
+  cursor: pointer;
+  display: inline-block;
+  width: 0;
+  height: 1em;
+  overflow: hidden;
+  text-indent: -1000em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1em 1em; }
+
+button.add, .button.add, .icon.add {
+  background-image: url("../img/fa-svg/gray/svg/plus.svg");
+  padding-left: 2rem; }
+
+button.edit, .button.edit, .icon.edit {
+  background-image: url("../img/fa-svg/gray/svg/pencil.svg");
+  padding-left: 2rem; }
+
+button.delete, .button.delete, .icon.delete {
+  background-image: url("../img/fa-svg/gray/svg/times.svg");
+  padding-left: 2rem; }
+
+button.submit, .button.submit, .icon.submit {
+  background-image: url("../img/fa-svg/gray/svg/check.svg");
+  padding-left: 2rem; }
+
+button.save, .button.save, .icon.save {
+  background-image: url("../img/fa-svg/gray/svg/floppy-o.svg");
+  padding-left: 2rem; }
+
+button.search, .button.search, .icon.search {
+  background-image: url("../img/fa-svg/gray/svg/search.svg");
+  padding-left: 2rem; }
+
+button.calendar, .button.calendar, .icon.calendar {
+  background-image: url("../img/fa-svg/gray/svg/calendar.svg");
+  padding-left: 2rem; }
+
+button.location, .button.location, .icon.location {
+  background-image: url("../img/fa-svg/gray/svg/map-marker.svg");
+  padding-left: 2rem; }
+
+button.map, .button.map, .icon.map {
+  background-image: url("../img/fa-svg/gray/svg/globe.svg");
+  padding-left: 2rem; }
+
+button.list, .button.list, .icon.list {
+  background-image: url("../img/fa-svg/gray/svg/list-ul.svg");
+  padding-left: 2rem; }
+
+button.print, .button.print, .icon.print {
+  background-image: url("../img/fa-svg/gray/svg/print.svg");
+  padding-left: 2rem; }
+
+button.reorder, .button.reorder, .icon.reorder {
+  background-image: url("../img/fa-svg/gray/svg/reorder.svg");
+  padding-left: 2rem; }
+
+button.user, .button.user, .icon.user {
+  background-image: url("../img/fa-svg/gray/svg/user.svg");
+  padding-left: 2rem; }
+
+button.upload, .button.upload, .icon.upload {
+  background-image: url("../img/fa-svg/gray/svg/upload.svg");
+  padding-left: 2rem; }
+
+button.download, .button.download, .icon.download {
+  background-image: url("../img/fa-svg/gray/svg/download.svg");
+  padding-left: 2rem; }
+
+.dropdown {
+  display: inline-block;
+  margin: 0 0.5em;
+  position: relative; }
+  .dropdown .launcher {
+    border: 1px solid #9e9e9e;
+    border-radius: 0.5em;
+    outline: none;
+    background-repeat: no-repeat;
+    background-position: 0.5em center;
+    background-size: 1em 1em;
+    background-image: url("../img/fa-svg/gray/svg/chevron-down.svg");
+    padding-left: 1.7em; }
+    .dropdown .launcher[aria-expanded="true"] + .links {
+      display: block; }
+    .dropdown .launcher[aria-expanded="false"] + .links {
+      display: none; }
+  .dropdown .links {
+    background: #fff;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.5);
+    min-width: 12rem;
+    padding: 0.5em 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: left;
+    transition: opacity .125s ease-in-out;
+    z-index: 20; }
+  .dropdown .subgroup:not(:first-of-type):before {
+    background-color: #183365;
+    color: #fff;
+    content: '';
+    display: block;
+    height: 1px;
+    margin: 0.5em; }
+  .dropdown a {
+    font-family: "Lora", serif;
+    display: block;
+    padding: 0.25em 0.5em; }
+    .dropdown a:hover {
+      background-color: #183365;
+      color: #fff; }
+
+/*
+    Events, dates, and times.
+*/
+.dateHeader {
+  font-size: 0.875rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0.67em 0; }
+  @media all and (min-width: 350px) {
+    .dateHeader {
+      text-transform: none; }
+      .dateHeader-weekday {
+        display: block;
+        font-size: 1.125rem;
+        font-style: italic;
+        line-height: 1em;
+        margin: 0 0 -.25em 0; }
+      .dateHeader-month {
+        font-size: 1.25rem;
+        line-height: 1em; }
+      .dateHeader-monthDate {
+        display: inline-block;
+        font-size: 2.25rem;
+        font-style: italic;
+        line-height: 1rem;
+        position: relative;
+        top: .125em; } }
+
+.event {
+  display: block; }
+  .event > h1 {
+    display: block;
+    font-size: 1.25em;
+    line-height: 1.25em;
+    margin: 0 0 .25em 0; }
+  .event-list {
+    display: block;
+    list-style: none;
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0; }
+  .event-dateTime, .event-location {
+    display: inline-block; }
+  .event-location:before {
+    background: url("../img/fa-svg/gray/svg/map-marker.svg") no-repeat 50% 50%/100% 100%;
+    content: '';
+    display: inline-block;
+    height: 1em;
+    position: relative;
+    top: .1em;
+    width: 1em; }
+  .event-meta {
+    margin: 0 0 1rem 0; }
+  @media all and (min-width: 640px) {
+    .event-meta {
+      margin: 0 0 .5rem 0; } }
+
+.fsCal {
+  border-top: 1px solid; }
+  .fsCal > .event {
+    position: relative; }
+    .fsCal > .event > h1 {
+      font-size: 1.125rem;
+      font-weight: normal;
+      margin-right: 2.25rem; }
+    .fsCal > .event > .icon.calendar {
+      height: 1.4375rem;
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      width: 1.4375rem; }
+  @media all and (min-width: 640px) {
+    .fsCal > .event {
+      box-sizing: border-box;
+      padding-left: 16.66667%; }
+      .fsCal > .event:not(:first-of-type) {
+        border-top: 1px solid; }
+      .fsCal > .event > h1 {
+        line-height: 1.25em;
+        margin-bottom: 0;
+        padding-top: .5rem; }
+      .fsCal > .event > time {
+        font-size: 1.125rem;
+        line-height: 1.25em;
+        position: absolute;
+        top: .6rem;
+        left: 0; }
+      .fsCal > .event > .event-description > p {
+        margin: 0.5rem 0; } }
+  @media all and (min-width: 1080px) {
+    .fsCal > .dateHeader {
+      float: left; }
+    .fsCal > .event {
+      margin-left: 16.66667%;
+      padding-left: 8.33333%; } }
+
+input[type="tel"] {
+  padding-left: 44px; }
+
+input.date, input.time {
+  width: 10em; }
+
+input[type="checkbox"], input[type="radio"] {
+  font-size: 1em;
+  padding: 0;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em; }
+
+dl {
+  border-top: 1px solid #eee4e1;
+  display: block;
+  margin: 0;
+  padding: 0.5em 0;
+  overflow: auto; }
+  dl dt {
+    font-family: "Lora", serif;
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin: 1em 0 0 0;
+    padding: .2em 0 0 0; }
+  dl dd {
+    margin: 0;
+    padding: 0; }
+    dl dd .help {
+      display: inline-block;
+      margin-left: 1em; }
+
+form dl {
+  border-top: none; }
+  form dl input:not([type="checkbox"][type="radio"]) {
+    box-sizing: border-box;
+    border: 1px solid #9e9e9e;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.125rem;
+    padding: 0.5em;
+    width: 100%; }
+    form dl input:not([type="checkbox"][type="radio"]):focus {
+      background-color: #fff;
+      border-color: #212121; }
+  form dl.checkbox label, form dl.radio label {
+    display: block;
+    margin: 0;
+    vertical-align: middle;
+    margin-bottom: 0.25em;
+    padding: 0 0 0 1.6em;
+    vertical-align: middle;
+    line-height: 1.2em; }
+  @media all and (min-width: 640px) {
+    form dl {
+      background: #c9e5f7;
+      margin: 2px 0; }
+      form dl:after {
+        clear: both;
+        content: '';
+        display: table; }
+      form dl dt {
+        color: #212121;
+        float: left;
+        font-size: 0.8125em;
+        margin: 0;
+        padding: .75em 0 0 1em;
+        width: 8em; }
+      form dl dd {
+        margin-left: 8em; }
+      form dl input:not([type="checkbox"][type="radio"]) {
+        font-size: 0.875em;
+        width: 20em; }
+        form dl input:not([type="checkbox"][type="radio"]).datePicker {
+          width: inherit; }
+        form dl input:not([type="checkbox"][type="radio"]).timePicker {
+          width: inherit; }
+      form dl.radio dt, form dl.checkbox dt, form dl.select dt {
+        padding-top: 0.5em; } }
+
+.miniGallery:after {
+  clear: both;
+  content: '';
+  display: table; }
+
+.miniGallery-col img {
+  width: 100%; }
+
+@media all and (min-width: 640px) {
+  .miniGallery-col {
+    box-sizing: border-box;
+    float: left; }
+    .miniGallery-col:nth-last-of-type(3):first-child,
+    .miniGallery-col:nth-last-of-type(3):first-child ~ .miniGallery-col {
+      width: 33%; }
+  .miniGallery + .text-description ul {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 4em;
+    -moz-column-gap: 4em;
+    column-gap: 4em; }
+    .miniGallery + .text-description ul > li {
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid; } }
+
+thead th {
+  background: #183365;
+  color: gainsboro;
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: "Lora", serif;
+  height: 2em;
+  padding: 0.5em;
+  vertical-align: bottom; }
+  thead th:first-child {
+    padding-left: 1.5em; }
+  thead th a {
+    color: #fff; }
+
+tbody th, tbody td {
+  background: gainsboro;
+  border-top: 1px solid #eee4e1;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.2em;
+  padding: 0.5em;
+  vertical-align: top; }
+  tbody th:first-child, tbody td:first-child {
+    padding-left: 1.5em; }
+
+tbody tr:nth-child(even) td {
+  background: silver; }
+
+table {
+  width: 100%; }
+  @media print {
+    table .dropdown {
+      display: none; } }
+
+@media print {
+  thead th, thead td, tbody th, tbody td {
+    background: none;
+    font-size: 11pt; }
+    thead th:first-child, thead td:first-child, tbody th:first-child, tbody td:first-child {
+      padding-left: 0; } }
+
+.personList:after {
+  clear: both;
+  content: '';
+  display: table; }
+
+.personListing {
+  box-sizing: border-box; }
+  .personListing > dt {
+    float: none;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    margin: 0.625rem 0 0 0; }
+    .personListing > dt:first-child {
+      margin-top: 0; }
+    .personListing > dt > span:last-child {
+      font-weight: 600; }
+  .personListing > dd {
+    font-size: 0.875rem;
+    margin: 0; }
+  @media all and (min-width: 640px) {
+    .personListing {
+      float: left; } }
+  @media screen and (min-width: 640px) and (max-width: 1080px) {
+    .personListing {
+      width: 33%; }
+      .personListing:nth-of-type(3n+1) {
+        clear: both; } }
+  @media all and (min-width: 1080px) {
+    .personListing {
+      width: 25%; }
+      .personListing:nth-of-type(4n+1) {
+        clear: both; } }
+
+.pricingTable {
+  margin-right: auto;
+  margin-left: auto; }
+  .pricingTable:after {
+    clear: both;
+    content: '';
+    display: table; }
+
+.pricingOffer {
+  box-sizing: border-box;
+  margin-bottom: 2em; }
+  .pricingOffer-title {
+    font-size: 1.125rem;
+    margin-bottom: 0; }
+  .pricingOffer-meta {
+    margin: 0 0 .25em 0; }
+  .pricingOffer-details > p {
+    line-height: 1.25em;
+    margin: .33em 0; }
+  .pricingOffer-value {
+    font-size: 2em; }
+  @media all and (min-width: 640px) {
+    .pricingOffer {
+      float: left;
+      width: 50%; }
+      .pricingOffer:nth-last-of-type(3):first-child,
+      .pricingOffer:nth-last-of-type(3):first-child ~ .pricingOffer {
+        width: 33%; }
+      .pricingOffer-title {
+        font-size: 1.5rem; } }
+  @media all and (min-width: 1080px) {
+    .pricingOffer:nth-last-of-type(4):first-child,
+    .pricingOffer:nth-last-of-type(4):first-child ~ .pricingOffer {
+      width: 25%; } }
+
+main header h1 {
+  display: inline-block;
+  font-size: 1.4rem;
+  margin-right: 1em; }
+
+main header .tools {
+  display: inline-block; }
+
+section, article {
+  margin: 0 0 2em 0; }
+  section section, section article, article section, article article {
+    margin: 0 0 1rem 0; }
+
+/*# sourceMappingURL=default.css.map */
+
+/** Urls are relative to screen.css */
+@import 'https://fonts.googleapis.com/css?family=Lora';
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+/** @see https://en.wikipedia.org/wiki/Web_colors */
+h2 { font-size: 1.9rem; }
+
+h3 { margin: 0.5em 0 0 0; }
+
+p { margin: 0 0 0.5em 0; }
+
+section { margin: 0; }
+
+#intro { margin-bottom: 1em; }
+
+@media all and (min-width: 640px) { #intro { display: grid; grid-template-columns: 1fr 340px; grid-column-gap: 0.5em; }
+  #intro > div { grid-column: 1; }
+  #intro > aside { grid-column: 2; } }
+
+#intro aside ul { list-style-type: none; }
+
+#intro aside img { max-width: 340px; height: auto; }
+
+@media all and (min-width: 1080px) { .dialog-off-canvas-main-canvas > header > .container, #nav1 .container, #alerts .container, .dialog-off-canvas-main-canvas > footer .container, main > div .container, #content > section > .container { width: 1060px; margin: 0 auto; } }
+
+#hamburger { position: absolute; clip: rect(0, 0, 0, 0); }
+
+label[for="hamburger"] { position: absolute; top: 0.25em; left: 0.25em; width: 2em; height: 2em; background-image: url("images/fa-svg/white/bars.svg"); background-size: contain; z-index: 1; cursor: pointer; }
+
+#nav1 { margin: 0; padding: 0; border: 0; width: 1px; height: 1px; overflow: hidden; position: absolute; background-color: #fff; }
+
+#nav1 .container { padding: 0; overflow: auto; }
+
+#nav1 .container a { color: #183365; display: block; }
+
+#hamburger:checked ~ nav { position: static; width: 100%; height: auto; overflow: auto; }
+
+@media all and (min-width: 640px) { #hamburger, label[for="hamburger"] { display: none; }
+  #nav1 { position: static; width: 100%; height: auto; overflow: auto; }
+  #nav1 .container { display: flex; flex-direction: row; justify-content: space-around; }
+  /* #nav1 { position:static; width:100%; height:auto; margin:0; background-color:$color-content-background; .container { padding:0; overflow:auto; display:flex; flex-direction:row; justify-content:space-around; a { color:$color-header; } } } */ }
+
+.dialog-off-canvas-main-canvas > header { background-color: #183365; color: #fff; padding: 0; }
+
+.dialog-off-canvas-main-canvas > header > .container { min-height: 2em; font-size: 1.25rem; }
+
+.dialog-off-canvas-main-canvas > header > .container h1, .dialog-off-canvas-main-canvas > header > .container h2 { display: block; margin: 4px 0 0 0.5em; padding: 0; font-family: "Roboto", sans-serif; color: #fff; border: none; }
+
+.dialog-off-canvas-main-canvas > header > .container h1 a, .dialog-off-canvas-main-canvas > header > .container h2 a { margin: 0; padding: 0; font-weight: bold; }
+
+.dialog-off-canvas-main-canvas > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bold; line-height: 1rem; }
+
+.dialog-off-canvas-main-canvas > header > .container h1 { font-size: 1rem; line-height: 1rem; }
+
+.dialog-off-canvas-main-canvas > header > .container h1 a { font-size: 1rem; line-height: 1rem; }
+
+.dialog-off-canvas-main-canvas > header > .container h2 { font-style: italic; font-size: 0.875rem; line-height: 0.875rem; }
+
+.dialog-off-canvas-main-canvas > header > .container h2 a { font-size: 0.875rem; line-height: 0.875rem; }
+
+@media all and (min-width: 640px) { .dialog-off-canvas-main-canvas > header > .container { display: flex; flex-direction: row; justify-content: space-between; } }
+
+#feedback { position: absolute; top: 0.5em; right: 0.5em; color: white; font-family: "Roboto", sans-serif; font-size: 1.125rem; font-weight: bold; }
+
+@media all and (min-width: 640px) { #feedback { right: 50%; } }
+
+#block-cob-branding { padding-left: 2em; height: 40px; overflow: hidden; }
+
+@media all and (min-width: 640px) { #block-cob-branding { padding: 0; flex: 1 0 320px; } }
+
+#block-searchform form { height: 2em; margin: 0; display: flex; flex-direction: row; justify-content: stretch; }
+
+#block-searchform form div { height: 100%; }
+
+#block-searchform form input { display: block; height: 100%; }
+
+#block-searchform .form-item { flex: 1 0 286px; }
+
+#block-searchform #edit-actions { flex: 0 0 34px; }
+
+#block-searchform #edit-actions .button { width: 34px; height: 100%; padding: 0; border: 0; border-radius: 0; margin: 0; }
+
+#block-searchform input[type="search"] { border: 0; padding: 0 0 0 0.5em; width: 100%; height: 100%; font-size: 1.25rem; background-color: #4990e2; }
+
+@media all and (min-width: 640px) { #block-searchform { flex: 0 0 320px; } }
+
+/** Styles for user generated content. These are styles for markup in the main content area of pages. This should control how we display the way HTML that users type. */
+#content ul { list-style: disc    outside; margin-left: 1em; }
+
+#content ol { list-style: decimal outside; margin-left: 1em; }
+
+#content.search-results h3 { font-weight: bold; }
+
+#content.search-results ol { list-style-type: none; }
+
+#content.search-results ol li { margin-bottom: 1em; }
+
+#content.search-results ol li > a { display: block; color: #4caf50; }
+
+#content .text_with_summary a, #content .text_long a { color: #3f9dff; text-decoration: underline; }
+
+#content .container { padding: 0.5em; }
+
+#content .container > section { padding: 0.5em 0; }
+
+#content .container > section h2 { color: #3f9dff; margin-bottom: 2rem; }
+
+#content .container > section .container { overflow: auto; padding: 0.5em; }
+
+@media all and (min-width: 640px) { #content .container > section h2 { font-size: 1.9rem; } }
+
+#content #activities section { display: flex; flex-direction: row; justify-content: center; }
+
+#content #activities section header, #content #activities section form { flex-basis: 30%; margin: 0 auto; }
+
+.parks-page #stats { color: #fff; background: #183365; font-size: 1.25rem; }
+
+.parks-page #stats .container { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; }
+
+.parks-page #stats .count { font-size: 1.9rem; }
+
+.parks-page #stats a { flex: 0 0 auto; width: 150px; height: 120px; padding-top: 40px; display: flex; flex-direction: column; justify-content: start; align-items: center; color: #fff; }
+
+.parks-page #stats a:hover { background-color: #4990e2; }
+
+.parks-page #stats a div { text-align: center; }
+
+@media all and (min-width: 640px) { .parks-page .events { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0.5em; } }
+
+.parks-page #activities h3 { font-size: 1.9rem; text-align: center; }
+
+.parks-page #categories { display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; }
+
+.parks-page #categories article { flex: 0 0 240px; margin: 0.5em; }
+
+.parks-page #categories article a { display: block; height: 290px; }
+
+.parks-page #categories article a:hover { background-color: #4990e2; }
+
+#promt-programsearchform { display: table; }
+
+#promt-programsearchform .form-item { margin-bottom: 0.5em; }
+
+#promt-programsearchform label { display: inline-block; width: 5em; }
+
+#promt-programsearchform select { width: 20em; }
+
+#promt-programsearchform #edit-actions { text-align: center; }
+
+/** Styles for markup that only shows up for users that are logged in This is stuff like the View/Edit/Delete buttons on content pages */
+#block-cob-local-tasks { margin: 1em 0; }
+
+#block-cob-local-tasks a { font-family: "Roboto", sans-serif; background-color: #183365; color: #fff; padding: 0.5em; border-radius: 0.5em; }
+
+#block-cob-local-tasks a:active, #block-cob-local-tasks a:hover { color: #c9e5f7; }
+
+#block-cob-local-tasks a.is-active { background-color: #c9e5f7; }
+
+#block-searchform .button { width: 0; height: 1em; overflow: hidden; text-indent: -10em; background-repeat: no-repeat; background-position: center center; background-size: 1em 1em; background-image: url("images/fa-svg/white/search.svg"); }
+
+#nav1 a { background-size: 24px; background-repeat: no-repeat; background-position: 0.5em center; padding: 0 0 0 52px; font-size: 1.25rem; line-height: 4rem; }
+
+#nav1 .about { background-image: url("images/alpha_icons/biscay/searchlocation.svg"); }
+
+#nav1 .news { background-image: url("images/alpha_icons/biscay/news.svg"); }
+
+#nav1 .city { background-image: url("images/alpha_icons/biscay/factory.svg"); }
+
+#nav1 .services { background-image: url("images/alpha_icons/biscay/services.svg"); }
+
+@media all and (min-width: 640px) { #nav1 a { display: inline-block; padding: 52px 0 0 0; background-size: auto 40px; background-position: center 0.5em; font-size: 1.125rem; line-height: 1.25em; } }
+
+#services-section a, #government-section a { display: inline-block; text-align: center; vertical-align: top; padding-top: 7em; background-size: 6em; background-repeat: no-repeat; background-position: center 0.5em; }
+
+#services-section a.contact { background-image: url("images/alpha_icons/white/messages-circle-o.svg"); }
+
+#services-section a.report { background-image: url("images/alpha_icons/white/exclamation-triangle-circle-o.svg"); }
+
+#services-section a.performance { background-image: url("images/alpha_icons/white/documentdata-circle-o.svg"); }
+
+#services-section a.myBloomington { background-image: url("images/alpha_icons/white/safecity-circle-o.svg"); }
+
+#services-section a.maps { background-image: url("images/alpha_icons/white/map-circle-o.svg"); }
+
+#services-section a.water { background-image: url("images/alpha_icons/white/watertap-circle-o.svg"); }
+
+#services-section a.parking_ticket { background-image: url("images/alpha_icons/white/ticket-circle-o.svg"); }
+
+#services-section a.parks { background-image: url("images/alpha_icons/white/park-circle-o.svg"); }
+
+#services-section a.contact:hover { background-image: url("images/alpha_icons/white/hover/messages-circle-o.svg"); }
+
+#services-section a.report:hover { background-image: url("images/alpha_icons/white/hover/exclamation-triangle-circle-o.svg"); }
+
+#services-section a.performance:hover { background-image: url("images/alpha_icons/white/hover/documentdata-circle-o.svg"); }
+
+#services-section a.myBloomington:hover { background-image: url("images/alpha_icons/white/hover/safecity-circle-o.svg"); }
+
+#services-section a.maps:hover { background-image: url("images/alpha_icons/white/hover/map-circle-o.svg"); }
+
+#services-section a.water:hover { background-image: url("images/alpha_icons/white/hover/watertap-circle-o.svg"); }
+
+#services-section a.parking_ticket:hover { background-image: url("images/alpha_icons/white/hover/ticket-circle-o.svg"); }
+
+#services-section a.parks:hover { background-image: url("images/alpha_icons/white/hover/park-circle-o.svg"); }
+
+#government-section a { color: #212121; }
+
+#government-section a.code { background-image: url("images/alpha_icons/biscay/code-circle-o.svg"); }
+
+#government-section a.budget { background-image: url("images/alpha_icons/biscay/moneybag-circle-o.svg"); }
+
+#government-section a.boards { background-image: url("images/alpha_icons/biscay/businessman-circle-o.svg"); }
+
+#government-section a.council { background-image: url("images/alpha_icons/biscay/user-circle-o.svg"); }
+
+#government-section a.contact { background-image: url("images/alpha_icons/biscay/phonecontact-circle-o.svg"); }
+
+#government-section a.elected { background-image: url("images/alpha_icons/biscay/policeofficer-circle-o.svg"); }
+
+#government-section a.public_safety { background-image: url("images/alpha_icons/biscay/policecar-circle-o.svg"); }
+
+#government-section a:hover { background-color: #4990e2; color: #fff; }
+
+#government-section a:hover h2 { color: #fff; }
+
+#government-section a.code:hover { background-image: url("images/alpha_icons/white/code-circle-o.svg"); }
+
+#government-section a.budget:hover { background-image: url("images/alpha_icons/white/moneybag-circle-o.svg"); }
+
+#government-section a.boards:hover { background-image: url("images/alpha_icons/white/businessman-circle-o.svg"); }
+
+#government-section a.council:hover { background-image: url("images/alpha_icons/white/user-circle-o.svg"); }
+
+#government-section a.contact:hover { background-image: url("images/alpha_icons/white/phonecontact-circle-o.svg"); }
+
+#government-section a.elected:hover { background-image: url("images/alpha_icons/white/policeofficer-circle-o.svg"); }
+
+#government-section a.public_safety:hover { background-image: url("images/alpha_icons/white/policecar-circle-o.svg"); }
+
+.contactInfo address, .contactInfo a { display: block; font-size: 1.125rem; font-style: normal; padding-left: 3.5rem; background-position: left center; background-size: 2.5rem; background-repeat: no-repeat; }
+
+.contactInfo a { line-height: 2em; }
+
+.contactInfo address a { line-height: 1em; padding: 0; }
+
+.contactInfo address { background-image: url("images/alpha_icons/white/location-square.svg"); }
+
+.contactInfo a.facebook { background-image: url("images/fa-svg/white/facebook-square.svg"); }
+
+.contactInfo a.twitter { background-image: url("images/fa-svg/white/twitter-square.svg"); }
+
+.contactInfo a[href^="mailto:"] { background-image: url("images/fa-svg/white/envelope.svg"); }
+
+.contactInfo a.phone { background-image: url("images/fa-svg/white/phone-square.svg"); }
+
+.contactInfo a.fax { background-image: url("images/fa-svg/white/fax.svg"); }
+
+.contactInfo a.onboard { background-image: url("images/icons/white/city_logo.svg"); }
+
+aside.contactInfo address { background-image: url("images/fa-svg/dark-slate/map-marker.svg"); }
+
+aside.contactInfo a.facebook { background-image: url("images/fa-svg/dark-slate/facebook-square.svg"); }
+
+aside.contactInfo a.twitter { background-image: url("images/fa-svg/dark-slate/twitter-square.svg"); }
+
+aside.contactInfo a[href^="mailto:"] { background-image: url("images/fa-svg/dark-slate/envelope.svg"); }
+
+aside.contactInfo a.phone { background-image: url("images/fa-svg/dark-slate/phone-square.svg"); }
+
+aside.contactInfo a.fax { background-image: url("images/fa-svg/dark-slate/fax.svg"); }
+
+aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/city_logo.svg"); }
+
+.button { padding: 15px 25px; margin-top: 10px; }
+
+#block-upcomingevents article, #block-committeemeetings article, .onboard_meetings article, .calendar_calendar article { display: flex; flex-direction: row; justify-content: start; height: 154px; min-width: 320px; overflow: hidden; border: 1px solid silver; }
+
+#block-upcomingevents article .month, #block-upcomingevents article .monthDate, #block-committeemeetings article .month, #block-committeemeetings article .monthDate, .onboard_meetings article .month, .onboard_meetings article .monthDate, .calendar_calendar article .month, .calendar_calendar article .monthDate { font-size: 1.9rem; font-weight: bold; }
+
+#block-upcomingevents article .summary, #block-committeemeetings article .summary, .onboard_meetings article .summary, .calendar_calendar article .summary { font-weight: bold; }
+
+#block-upcomingevents article .location, #block-committeemeetings article .location, .onboard_meetings article .location, .calendar_calendar article .location { font-size: small; line-height: 1.25em; }
+
+#block-upcomingevents article h4, #block-committeemeetings article h4, .onboard_meetings article h4, .calendar_calendar article h4 { margin: 0; }
+
+#block-upcomingevents article header, #block-committeemeetings article header, .onboard_meetings article header, .calendar_calendar article header { flex: 0 0 118px; height: 100%; background-color: #ff9800; color: #fff; font-family: "Lora", serif; }
+
+#block-upcomingevents article header time, #block-committeemeetings article header time, .onboard_meetings article header time, .calendar_calendar article header time { height: 100%; display: flex; flex-direction: column; justify-content: center; }
+
+#block-upcomingevents article header time span, #block-committeemeetings article header time span, .onboard_meetings article header time span, .calendar_calendar article header time span { display: block; text-align: center; line-height: 1.5em; }
+
+#block-upcomingevents article > div, #block-committeemeetings article > div, .onboard_meetings article > div, .calendar_calendar article > div { line-height: 1.5em; padding: 0.5em; display: flex; flex-direction: column; justify-content: center; }
+
+#block-upcomingevents article > div time, #block-committeemeetings article > div time, .onboard_meetings article > div time, .calendar_calendar article > div time { text-align: center; display: block; }
+
+#block-upcomingevents article > div span, #block-committeemeetings article > div span, .onboard_meetings article > div span, .calendar_calendar article > div span { text-align: center; display: block; height: 3em; overflow: hidden; }
+
+#block-upcomingevents > div, #block-committeemeetings > div, .onboard_meetings > div, .calendar_calendar > div { text-align: center; }
+
+@media all and (min-width: 640px) { section.divided > .container > header, section.divided .calendar_calendar > header, #content section > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 1em 0; }
+  section.divided > .container > header h2, section.divided .calendar_calendar > header h2, #content section > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; font-size: 1.9rem; font-weight: 900; } }
+
+section.divided.dark { color: #fff; background-color: #183365; }
+
+section.divided.dark .container > header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
+
+section.divided.dark .container > header h2 { background-color: #183365; color: #fff; }
+
+section.divided.dark h3, section.divided.dark a { color: #fff; }
+
+section.divided .container > header, section.divided .calendar_calendar > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+
+section.divided .container > header h2, section.divided .container > header a, section.divided .calendar_calendar > header h2, section.divided .calendar_calendar > header a { background-color: #fff; color: #3f9dff; }
+
+.paragraph > header, #asm_animals > header, #block-categoryprograms > header, #block-locationprograms > header, #block-departmentstaff > header, #block-committeemembers > header, section.views-element-container > header, #promt_sessions > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+
+.paragraph > header h2, #asm_animals > header h2, #block-categoryprograms > header h2, #block-locationprograms > header h2, #block-departmentstaff > header h2, #block-committeemembers > header h2, section.views-element-container > header h2, #promt_sessions > header h2 { background-color: #fff; color: #3f9dff; }
+
+.front header > h2 { text-transform: uppercase; }
+
+.front #banner { display: flex; justify-content: center; align-items: center; }
+
+.front #badge { display: block; width: 275px; height: 275px; background: url("images/200yearsCircle.png") no-repeat; }
+
+.front aside.calendar_calendar .events { height: 660px; display: flex; flex-direction: column; justify-content: space-between; }
+
+.front aside.calendar_calendar .events article { margin: 0; }
+
+#services-section nav, #government-section nav { text-align: center; display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; }
+
+#services-section nav h2, #government-section nav h2 { font-family: "Roboto", sans-serif; font-size: 1.25rem; color: #183365; height: 2.5em; }
+
+#services-section a, #government-section a { flex: 0 0 140px; margin-bottom: 1em; }
+
+@media all and (min-width: 640px) { #services-section a, #government-section a { flex: 0 0 25%; } }
+
+section.promo .container > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; }
+
+section.promo .container > div > div, section.promo .container > div > p { flex: 1 0 320px; }
+
+section.promo .container > div .entity_reference > div { text-align: center; }
+
+section.promo p { font-size: 1.25rem; line-height: 1.5em; letter-spacing: .04em; }
+
+section.promo .promo_title { text-align: center; }
+
+#news-section .container > div { display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap; width: 100%; }
+
+#news-section .container > div > .news { flex: 1 1 320px; margin: 0 0.5em 0.5em 0; }
+
+@media all and (min-width: 640px) { #news-section .container > div > .news .results { height: 660px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
+  #news-section .container > div > .news a:first-child { grid-column-start: 1; grid-column-end: 3; } }
+
+#news-section .container > div > .news > div:last-child { text-align: center; }
+
+#news-section .container > div aside { flex: 0 0 320px; }
+
+article.news.teaser { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; height: 151px; overflow: hidden; margin-right: 0.5em; padding: 50px 0 0 0.5em; border-color: #183365 silver silver; border-style: solid; border-width: 8px 1px 1px 1px; position: relative; }
+
+article.news.teaser h3 { font-size: 1.25rem; font-weight: bold; font-family: "Lora", serif; color: #183365; }
+
+article.news.teaser header { flex: 1 0 160px; }
+
+article.news.teaser .summary { flex: 1 0 160px; color: #212121; }
+
+article.news.teaser.hasImage { padding-left: 148px; }
+
+article.news.teaser .entity_reference { width: 140px; position: absolute; top: 0; left: 0; }
+
+article.news.teaser .entity_reference img { width: 140px; height: auto; }
+
+article.news.teaser time { position: absolute; top: 20px; right: 0.5em; font-family: "Lora", serif; font-weight: bold; color: #183365; }
+
+article.news.full #intro header h2 { font-size: 1.125rem; color: #212121; margin-bottom: 0; }
+
+/** Styles for paragraph types defined in our Drupal site Paragraphs are a special module we installed. @see https://www.drupal.org/project/paragraphs These are not to be confused with HTML P tags.  It is unfortunate that the module happens to call itself with that name. */
+#asm_animals > div, #interactivemap_maps > div, #legislationTypes > div, #reports > div, .departments-block, .parks-categories-block, .info-list, .paragraph--type--info-list { text-align: center; }
+
+@media all and (min-width: 640px) { #asm_animals > div, #interactivemap_maps > div, #legislationTypes > div, #reports > div, .departments-block, .parks-categories-block, .info-list, .promt_programs, .paragraph--type--info-list > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; } }
+
+#asm_animals article, #interactivemap_maps article, #legislationTypes article, #reports article, .departments-block > div, .parks-categories-block > div, .info-list > div, .info-list > .info-card, .promt_programs > article, .paragraph--type--info-card { height: auto; }
+
+#asm_animals article article, #interactivemap_maps article article, #legislationTypes article article, #reports article article, .departments-block > div article, .parks-categories-block > div article, .info-list > div article, .info-list > .info-card article, .promt_programs > article article, .paragraph--type--info-card article { height: auto; }
+
+#asm_animals article a, #interactivemap_maps article a, #legislationTypes article a, #reports article a, .departments-block > div a, .parks-categories-block > div a, .info-list > div a, .info-list > .info-card a, .promt_programs > article a, .paragraph--type--info-card a { background-color: gainsboro; color: #212121; display: block; margin-bottom: 1em; height: 250px; overflow: hidden; }
+
+#asm_animals article a h3, #interactivemap_maps article a h3, #legislationTypes article a h3, #reports article a h3, .departments-block > div a h3, .parks-categories-block > div a h3, .info-list > div a h3, .info-list > .info-card a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { vertical-align: top; color: #4a4a4a; font-family: "Roboto", sans-serif; font-size: 1.25rem; }
+
+#asm_animals article a:hover, #interactivemap_maps article a:hover, #legislationTypes article a:hover, #reports article a:hover, .departments-block > div a:hover, .parks-categories-block > div a:hover, .info-list > div a:hover, .info-list > .info-card a:hover, .promt_programs > article a:hover, .paragraph--type--info-card a:hover { background-color: #4990e2; color: #fff; }
+
+#asm_animals article a:hover h3, #interactivemap_maps article a:hover h3, #legislationTypes article a:hover h3, #reports article a:hover h3, .departments-block > div a:hover h3, .parks-categories-block > div a:hover h3, .info-list > div a:hover h3, .info-list > .info-card a:hover h3, .promt_programs > article a:hover h3, .paragraph--type--info-card a:hover h3 { color: #fff; }
+
+#asm_animals article a img, #interactivemap_maps article a img, #legislationTypes article a img, #reports article a img, .departments-block > div a img, .parks-categories-block > div a img, .info-list > div a img, .info-list > .info-card a img, .promt_programs > article a img, .paragraph--type--info-card a img { width: 284px; }
+
+@media all and (min-width: 640px) { #asm_animals article, #interactivemap_maps article, #legislationTypes article, #reports article, .departments-block > div, .parks-categories-block > div, .info-list > div, .info-list > .info-card, .promt_programs > article, .paragraph--type--info-card { flex-basis: 320px; vertical-align: top; text-align: center; }
+  #asm_animals article a, #interactivemap_maps article a, #legislationTypes article a, #reports article a, .departments-block > div a, .parks-categories-block > div a, .info-list > div a, .info-list > .info-card a, .promt_programs > article a, .paragraph--type--info-card a { padding: 1em; height: 290px; }
+  #asm_animals article a h3, #interactivemap_maps article a h3, #legislationTypes article a h3, #reports article a h3, .departments-block > div a h3, .parks-categories-block > div a h3, .info-list > div a h3, .info-list > .info-card a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { font-size: 1.9rem; margin: 0 0 0.5em 0; } }
+
+.boards-list header { font-family: "Lora", serif; font-size: 1.25rem; }
+
+.boards-list header h3 { display: inline; }
+
+dl { border: none; }
+
+#alerts { background-color: #4a4a4a; color: #fff; }
+
+#alerts h2, #alerts a { color: #fff; }
+
+#alerts .container { text-align: center; }
+
+#alerts article { margin: 0; padding: 0.5em; }
+
+#alerts .info { background-color: #4caf50; }
+
+#alerts .warning { background-color: #ff9800; }
+
+#alerts .severe { background-color: #ed9a9c; }
+
+#banner { height: 320px; background: url("images/downtown-large.png") no-repeat center center; }
+
+#breadcrumb { display: flex; flex-direction: column; justify-content: end; background-color: #3f9dff; color: #fff; }
+
+#breadcrumb .container { padding: 0.5em; }
+
+#breadcrumb h1 { font-size: 1.9rem; color: #fff; }
+
+#breadcrumb nav { font-size: 1rem; }
+
+#breadcrumb nav a:not(:last-child):after { content: " >> "; }
+
+#breadcrumb address, #breadcrumb a { color: #fff; }
+
+@media all and (min-width: 640px) { #breadcrumb h1 { font-size: 3.75rem; } }
+
+@media all and (min-width: 640px) { #breadcrumb .contactInfo > dl { display: inline-block; width: 30%; vertical-align: middle; } }
+
+#block-departmentstaff > div, #block-committeemembers .seats { font-size: 0.875rem; }
+
+#block-departmentstaff > div h3 div, #block-committeemembers .seats h3 div { font-size: 1.125rem; }
+
+#block-departmentstaff > div .member, #block-committeemembers .seats .member { text-align: center; margin-bottom: 1rem; padding: .5rem; }
+
+#block-departmentstaff > div .member dd, #block-committeemembers .seats .member dd { line-height: 1.5em; }
+
+#block-departmentstaff > div .member dt, #block-committeemembers .seats .member dt { margin: 0; }
+
+@media all and (min-width: 640px) { #block-departmentstaff > div, #block-committeemembers .seats { display: flex; flex-flow: row wrap; justify-content: space-between; }
+  #block-departmentstaff > div h3, #block-committeemembers .seats h3 { margin: 0; }
+  #block-departmentstaff > div .member, #block-committeemembers .seats .member { width: 208px; } }
+
+@media all and (min-width: 1080px) { #block-departmentstaff > div, #block-committeemembers .seats { width: 1080px; margin: 0 auto; } }
+
+.contactInfo dt, #block-departmentstaff dt { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+#block-committeemembers dt { float: none; display: inline-block; }
+
+#related-links > .container > div, #block-committeemembers nav { text-align: center; }
+
+#related-links > .container > div div, #block-committeemembers nav div { display: inline-block; }
+
+#related-links > .container > div a, #block-committeemembers nav a { background-color: #fff; border-color: #4caf50; color: #4caf50; }
+
+.pager ul { list-style-type: none; }
+
+.pager li { display: inline-block; padding: 0 0.5em; }
+
+.pager li.is-active { background-color: #183365; }
+
+.pager li.is-active a { color: #fff; }
+
+.dialog-off-canvas-main-canvas > footer { background-color: #4a4a4a; color: #fff; padding: 0.5em; }
+
+.dialog-off-canvas-main-canvas > footer a { font-size: 1.25rem; color: #fff; display: block; text-align: left; }
+
+.dialog-off-canvas-main-canvas > footer address { text-align: left; }
+
+@media all and (min-width: 640px) { .dialog-off-canvas-main-canvas > footer .container { display: flex; flex-direction: row; justify-content: space-between; } }
+
+/*# sourceMappingURL=screen.css.map */
