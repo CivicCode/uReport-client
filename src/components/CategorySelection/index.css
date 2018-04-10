@@ -1,4 +1,6 @@
-.CategorySelection {
+/* consider using grid to quickly collapse white space */
+
+/* .CategorySelection {
   display: flex;
   flex-flow: column wrap;
 }
@@ -8,4 +10,4 @@
     display: flex;
     flex-flow: row wrap;
   }
-}
+} */
