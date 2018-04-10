@@ -1,13 +1,20 @@
-/* consider using grid to quickly collapse white space */
+/* TODO: look at their container/breakpoints */
 
-/* .CategorySelection {
-  display: flex;
-  flex-flow: column wrap;
+/* mobile */
+.CategorySelection {
+	column-count: 1;
 }
 
-@media (min-width: 768px) {
-  .CategorySelection {
-    display: flex;
-    flex-flow: row wrap;
-  }
-} */
+/* tablet */
+@media (min-width: 700px) {
+	.CategorySelection {
+		column-count: 2;
+	}
+}
+
+/* desktop */
+@media (min-width: 900px) {
+	.CategorySelection {
+		column-count: 3;
+	}
+}

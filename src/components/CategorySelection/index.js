@@ -9,7 +9,6 @@ const CategorySelection = () => {
   return (
     <div className="CategorySelection">
       <CategorySelectionCard
-        category="cats"
       />
     </div>
   );

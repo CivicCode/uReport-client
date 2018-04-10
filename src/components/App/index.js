@@ -3,6 +3,7 @@ import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
 
 import ServiceListQuery from '../ServiceListQuery';
+import CategorySelection from '../CategorySelection';
 
 import './index.css';
 
@@ -13,7 +14,9 @@ const client = new ApolloClient({
 const App = () => (
   <ApolloProvider client={client}>
     <div className="App">
-      <ServiceListQuery />
+      <div className="container">
+        <ServiceListQuery />
+      </div>
     </div>
   </ApolloProvider>
 );

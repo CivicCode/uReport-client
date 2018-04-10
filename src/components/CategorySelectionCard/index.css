@@ -14,6 +14,7 @@
 
 
 .CategorySelectionCard {
+  break-inside: avoid;
   margin-bottom: 33px;
   position: relative;
   border-color: var(--navy) var(--grey) var(--grey);
@@ -24,46 +25,8 @@
 
 .CategorySelectionCard h3 {
   color: var(--grey);
-  margin-bottom: ( 1.03448276 * (1 / 1.618) ) * 1em;
 }
 
 .CategorySelectionCard a {
   color: var(--navy);
 }
-
-/* consider using grid to quickly collapse white space */
-
-/* @media (min-width: 768px) {
-  .CategorySelectionCard {
-    flex: 0 0 46.5vw;
-  }
-  .CategorySelectionCard:nth-of-type(2n) {
-    margin-left: 2vw;
-  }
-}
-
-@media (min-width: 1025px) {
-  .CategorySelectionCard {
-    flex: 0 0 31vw;
-  }
-  .CategorySelectionCard:nth-of-type(2n) {
-    margin-left: 0;
-  }
-  .CategorySelectionCard:nth-of-type(3n-1) {
-    margin-left: 1vw;
-    margin-right: 1vw;
-  }
-}
-
-@media (min-width: 1200px) {
-  .CategorySelectionCard {
-    flex: 0 0 calc(1200px * 0.93 / 3);
-  }
-  .CategorySelectionCard:nth-of-type(2n) {
-    margin-left: 0;
-  }
-  .CategorySelectionCard:nth-of-type(3n-1) {
-    margin-left: calc(1200px / 100);
-    margin-right: calc(1200px / 100);
-  }
-} */

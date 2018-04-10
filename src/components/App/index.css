@@ -1,4 +1,4 @@
-/* this is probably alraedy set */
+/* this is probably already set */
 * {
   box-sizing: border-box;
 }
@@ -13,20 +13,20 @@
 /* --- Container --- */
 
 
-
-/* .container {
+/* TODO: We should try to match or rely on their container properties */
+.App .container {
   width: 95vw;
   margin: 0 auto;
   max-width: 1200px;
 }
 
-.container::before {
+.App .container::before {
   display: table;
   content: "";
 }
 
-.container::after {
+.App .container::after {
   display: table;
   clear: both;
   content: "";
-} */
+}
