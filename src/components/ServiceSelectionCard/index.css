@@ -13,7 +13,7 @@
 
 
 
-.CategorySelectionCard {
+.ServiceSelectionCard {
   break-inside: avoid;
   margin-bottom: 33px;
   position: relative;
@@ -23,10 +23,10 @@
   padding: 0 1em;
 }
 
-.CategorySelectionCard h3 {
+.ServiceSelectionCard h3 {
   color: var(--grey);
 }
 
-.CategorySelectionCard a {
+.ServiceSelectionCard a {
   color: var(--navy);
 }

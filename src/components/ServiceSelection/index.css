@@ -1,20 +1,20 @@
 /* TODO: look at their container/breakpoints */
 
 /* mobile */
-.CategorySelection {
+.ServiceSelection {
 	column-count: 1;
 }
 
 /* tablet */
 @media (min-width: 700px) {
-	.CategorySelection {
+	.ServiceSelection {
 		column-count: 2;
 	}
 }
 
 /* desktop */
 @media (min-width: 900px) {
-	.CategorySelection {
+	.ServiceSelection {
 		column-count: 3;
 	}
 }
