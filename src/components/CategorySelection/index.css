@@ -1,0 +1,11 @@
+.CategorySelection {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+@media (min-width: 768px) {
+  .CategorySelection {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
