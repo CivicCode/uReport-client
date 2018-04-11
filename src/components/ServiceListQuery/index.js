@@ -2,6 +2,23 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
+import ServiceSelection from '../ServiceSelection';
+
+/*
+  reduce function below will result in data structure like this:
+  {
+    'Cleanup & Sanitation': [
+      {
+        service_code: 2,
+        service_name: 'Excessive Growth'
+        ...
+      }
+      ...
+    ],
+    ...
+  }
+*/
+
 const ServiceListQuery = () => (
   <Query
     query={gql`
@@ -22,11 +39,19 @@ const ServiceListQuery = () => (
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :(</p>;
 
-      return data.serviceList.map(({ service_name }) => (
-        <div key={service_name}>
-          {service_name}
-        </div>
-      ));
+
+      const groupedByGroup = data.serviceList.reduce(
+        (acc, cv) => {
+          acc[cv.group] = acc[cv.group] || [];
+          acc[cv.group].push(cv);
+          return acc;
+        }, {});
+
+      return (
+        <ServiceSelection
+          groupedData={groupedByGroup}
+        />
+      );
     }}
   </Query>
 );
