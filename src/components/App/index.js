@@ -3,7 +3,6 @@ import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
 
 import ServiceListQuery from '../ServiceListQuery';
-import ServiceSelection from '../ServiceSelection';
 
 import './index.css';
 
