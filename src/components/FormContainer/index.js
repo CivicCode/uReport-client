@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ExcessiveGrowth  = () => {
+const Form  = () => {
   return(
     <div>
       Hello.
@@ -8,4 +8,4 @@ const ExcessiveGrowth  = () => {
   )
 }
 
-export default ExcessiveGrowth;
+export default Form;

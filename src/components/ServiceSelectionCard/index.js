@@ -10,12 +10,12 @@ const ServiceSelectionCard = ({ group, serviceNames }) => {
       <ul>
       {
         serviceNames.map(item => 
-          <Route 
-            key={item.service_name}
-            path={`/${item.service_name}`}
-          >
-            <p>{item.service_name}</p>
-          </Route>)
+          <li key={item.service_name}>
+            <Link to={`/form/${item.service_name}`}>
+            {item.service_name}
+            </Link>
+          </li>
+           )
       }
       </ul>
     </div>

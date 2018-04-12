@@ -1,26 +1,23 @@
-import React from 'react';
-import { ApolloProvider } from 'react-apollo';
-import { Route, Switch, Redirect } from 'react-router-dom'
-import ApolloClient from 'apollo-boost';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import ServiceListQuery from '../ServiceListQuery';
+import EntryPage from '../EntryPage';
+import Form from '../FormContainer'
 
-import './index.css';
-
-const client = new ApolloClient({
-  uri: "http://open311ql.pw/graphql"
-});
-
-const App = () => {
-  return (
-    <ApolloProvider client={client}>
+class App extends Component {
+  render() {
+    return(
       <div className="App">
-        <div className="container">
-          <ServiceListQuery />
-        </div>
+        <Route 
+          path="/" 
+          component={EntryPage} />
+        <Route 
+          path="/form/*" 
+          component={Form}/>
       </div>
-    </ApolloProvider>
-  );
-};
+    )
+  }
+}
 
 export default App;

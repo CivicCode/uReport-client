@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-.App {
+.EntryPage {
   display: flex;
   flex-direction: column;
   margin-bottom: 1em;
@@ -15,18 +15,18 @@
 
 
 /* TODO: We should try to match or rely on their container properties */
-.App .container {
+.EntryPage .container {
   width: 95vw;
   margin: 0 auto;
   max-width: 1060px;
 }
 
-.App .container::before {
+.EntryPage .container::before {
   display: table;
   content: "";
 }
 
-.App .container::after {
+.EntryPage .container::after {
   display: table;
   clear: both;
   content: "";
