@@ -1,5 +1,6 @@
 import React from 'react';
 import { ApolloProvider } from 'react-apollo';
+import { Route, Switch, Redirect } from 'react-router-dom'
 import ApolloClient from 'apollo-boost';
 
 import ServiceListQuery from '../ServiceListQuery';
