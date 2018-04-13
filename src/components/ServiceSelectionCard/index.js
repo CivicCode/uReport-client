@@ -9,7 +9,7 @@ const ServiceSelectionCard = ({ group, serviceNames }) => {
       <h3>{group}</h3>
       <ul>
       {
-        serviceNames.map(item => 
+        serviceNames.map(item =>
           <li key={item.service_name}>
             <Link to={`/form/${item.service_name}`}>
             {item.service_name}

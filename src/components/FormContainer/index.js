@@ -34,7 +34,7 @@ const Form = ({data, match}) => (
         }, {});
 
       return (
-        
+
         <div className="Form">
           <h1 className="headline">Report {(match.url).replace('/form/', '')}</h1>
           <form action="#">
