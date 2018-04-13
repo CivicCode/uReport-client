@@ -10,11 +10,11 @@ class App extends Component {
     return(
       <div className="App">
         <Switch>
-          <Route 
-            exact path="/" 
+          <Route
+            exact path="/"
             component={EntryPage} />
-          <Route 
-            path="/form/*" 
+          <Route
+            path="/form/*"
             component={Form}/>
         </Switch>
       </div>

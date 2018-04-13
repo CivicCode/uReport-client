@@ -5,18 +5,20 @@ import gql from 'graphql-tag';
 
 import './index.css';
 
-const Form = ({data, match}) => (
+const Form = ({match, location}) => (
   <Query
     query={gql`
       {
-        serviceList {
-          service_code
-          service_name
-          description
-          metadata
-          type
-          keywords
-          group
+        serviceDefinition(service_code: ${location.state.service_code}){
+          variable,
+          code,
+          datatype,
+          required,
+          datatype_description,
+          values {
+            key,
+            name
+          }
         }
       }
     `}
@@ -24,15 +26,7 @@ const Form = ({data, match}) => (
     {({ loading, error, data }) => {
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :(</p>;
-
-
-      const groupedByGroup = data.serviceList.reduce(
-        (acc, cv) => {
-          acc[cv.group] = acc[cv.group] || [];
-          acc[cv.group].push(cv);
-          return acc;
-        }, {});
-
+      console.log(data);
       return (
 
         <div className="Form">

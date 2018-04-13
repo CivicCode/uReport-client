@@ -11,7 +11,12 @@ const ServiceSelectionCard = ({ group, serviceNames }) => {
       {
         serviceNames.map(item =>
           <li key={item.service_name}>
-            <Link to={`/form/${item.service_name}`}>
+            <Link to={{
+              pathname: `/form/${item.service_name}`,
+              state: {
+                service_code: item.service_code
+              }
+            }}>
             {item.service_name}
             </Link>
           </li>
