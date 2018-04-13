@@ -1,0 +1,14 @@
+.Form {
+  text-align: center
+}
+
+.headline {
+  color: #3f9dff;
+}
+
+form input, select {
+  width: 50rem;
+  height: 3rem;
+  margin-bottom: 3rem;
+  margin-left: 1rem;
+}
