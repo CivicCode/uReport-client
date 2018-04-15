@@ -9,6 +9,7 @@ const Form = ({name, code, fields}) => (
     {
       fields.map(field => <Field key={field.code} field={field} />)
     }
+    <input type="submit" value="Submit" />
     </form>
   </div>
 );
