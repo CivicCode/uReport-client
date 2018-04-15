@@ -5,6 +5,8 @@ import gql from 'graphql-tag';
 
 import Form from '../Form';
 
+import defaultFields from '../../data';
+
 const formDefinitionQuery = (code) => gql`
 {
   serviceDefinition(service_code: ${code}){
@@ -26,6 +28,8 @@ const FormQuery = ({match, location}) => {
   const getNameIndex = arr => arr.indexOf('name') + 1;
   const getCode = arr => arr[getCodeIndex(arr)];
   const getName = arr => arr[getNameIndex(arr)];
+
+  const fields = defaultFields;
   /*
     if the metadata is known to be false, don't run a query
 
@@ -39,6 +43,7 @@ const FormQuery = ({match, location}) => {
     <Form
       code={getCode(splitUrl)}
       name={getName(splitUrl)}
+      fields={fields}
     />
   )
   :
@@ -54,6 +59,7 @@ const FormQuery = ({match, location}) => {
               <Form
                 code={getCode(splitUrl)}
                 name={getName(splitUrl)}
+                fields={fields}
               />
             );
         }
