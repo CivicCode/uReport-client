@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Input, TextArea } from '../Fields';
+import { Input, Media, TextArea } from '../Fields';
 
 import './index.css';
 
@@ -12,7 +12,8 @@ const Field = ({field}) => {
       datetime: <Input key={field.code} code={field.code} description={field.description} />,
       text: <TextArea key={field.code} code={field.code} description={field.description} />,
       singlevaluelist: null,
-      multivaluelist: null
+      multivaluelist: null,
+      media: <Media key={field.code} code={field.code} description={field.description} />
     };
 
     return map[field.datatype];

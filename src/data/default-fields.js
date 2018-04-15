@@ -24,7 +24,7 @@ const defaultFields = [
     'required': true,
     'datatype_description': '',
     description: 'Phone',
-    'order': 4
+    'order': 3
   },
   {
     'variable': true,
@@ -42,7 +42,16 @@ const defaultFields = [
     'required': true,
     'datatype_description': '',
     description: 'Description',
-    'order': 4
+    'order': 5
+  },
+  {
+    'variable': true,
+    'code': 'description',
+    'datatype': 'media',
+    'required': false,
+    'datatype_description': '',
+    description: 'Upload a photo',
+    'order': 6
   }
 ];
 
