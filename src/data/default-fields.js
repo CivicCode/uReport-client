@@ -4,7 +4,8 @@ const defaultFields = [
     'code': 'firstName',
     'datatype': 'string',
     'required': true,
-    'datatype_description': 'First Name',
+    'datatype_description': '',
+    'description': 'First Name',
     'order': 1
   },
   {
@@ -12,7 +13,8 @@ const defaultFields = [
     'code': 'lastName',
     'datatype': 'string',
     'required': true,
-    'datatype_description': 'Last Name',
+    'datatype_description': '',
+    description: 'Last Name',
     'order': 2
   },
   {
@@ -20,7 +22,8 @@ const defaultFields = [
     'code': 'phone',
     'datatype': 'string',
     'required': true,
-    'datatype_description': 'Phone',
+    'datatype_description': '',
+    description: 'Phone',
     'order': 4
   },
   {
@@ -28,7 +31,8 @@ const defaultFields = [
     'code': 'email',
     'datatype': 'string',
     'required': true,
-    'datatype_description': 'Email',
+    'datatype_description': '',
+    'description': 'Email',
     'order': 4
   },
   {
@@ -36,7 +40,8 @@ const defaultFields = [
     'code': 'description',
     'datatype': 'text',
     'required': true,
-    'datatype_description': 'Description',
+    'datatype_description': '',
+    description: 'Description',
     'order': 4
   }
 ];

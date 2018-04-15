@@ -7,10 +7,10 @@ import './index.css';
 const Field = ({field}) => {
   const getField = field => {
     const map = {
-      string: <Input key={field.code} code={field.code} datatype_description={field.datatype_description} />,
-      number: <Input key={field.code} code={field.code} datatype_description={field.datatype_description} />,
-      datetime: <Input key={field.code} code={field.code} datatype_description={field.datatype_description} />,
-      text: <TextArea key={field.code} code={field.code} datatype_description={field.datatype_description} />,
+      string: <Input key={field.code} code={field.code} description={field.description} />,
+      number: <Input key={field.code} code={field.code} description={field.description} />,
+      datetime: <Input key={field.code} code={field.code} description={field.description} />,
+      text: <TextArea key={field.code} code={field.code} description={field.description} />,
       singlevaluelist: null,
       multivaluelist: null
     };

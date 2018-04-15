@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Input = ({code, datatype_description}) => {
+const Input = ({code, description}) => {
   return (
     <label>
-      {datatype_description}:
+      {description}:
       <input type="text" name={code} />
     </label>
   );

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const TextArea = ({code, datatype_description}) => {
+const TextArea = ({code, description}) => {
   return (
     <label>
-      {datatype_description}:
+      {description}:
       <textarea type="text" name={code} />
     </label>
   );
