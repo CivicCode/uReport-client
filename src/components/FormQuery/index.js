@@ -20,13 +20,29 @@ const formDefinitionQuery = (code) => gql`
   }
 }`;
 
-const FormQuery = ({match}) => {
+const FormQuery = ({match, location}) => {
   const splitUrl = match.url.split('/');
   const getCodeIndex = arr => arr.indexOf('code') + 1;
   const getNameIndex = arr => arr.indexOf('name') + 1;
   const getCode = arr => arr[getCodeIndex(arr)];
   const getName = arr => arr[getNameIndex(arr)];
-  return (
+  /*
+    if the metadata is known to be false, don't run a query
+
+    Note that if the user directly enters the url into the url bar,
+    location.state.matadata will be undefined, so a query should be run. The
+    only way to really know that metadata is and should be false, is for the user
+    to enter the application through the entry page and click on a link.
+  */
+  return location && location.state && location.state.metadata && location.state.metadata === false ?
+  (
+    <Form
+      code={getCode(splitUrl)}
+      name={getName(splitUrl)}
+    />
+  )
+  :
+  (
     <Query
       query={formDefinitionQuery(getCode(splitUrl))}
     >
