@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Media = ({code, description}) => {
+const Media = ({ field }) => {
+  const { code, description } = field;
   return (
     <div className="Media">
       <label>

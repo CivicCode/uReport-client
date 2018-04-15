@@ -1,19 +1,19 @@
 import React from 'react';
 
-import { Input, Media, TextArea } from '../Fields';
+import { DropDown, Input, Media, TextArea } from '../Fields';
 
 import './index.css';
 
 const Field = ({field}) => {
   const getField = field => {
     const map = {
-      string: <Input key={field.code} code={field.code} description={field.description} />,
-      number: <Input key={field.code} code={field.code} description={field.description} />,
-      datetime: <Input key={field.code} code={field.code} description={field.description} />,
-      text: <TextArea key={field.code} code={field.code} description={field.description} />,
-      singlevaluelist: null,
+      string: <Input key={field.code} field={field} />,
+      number: <Input key={field.code} field={field} />,
+      datetime: <Input key={field.code} field={field} />,
+      text: <TextArea key={field.code} field={field} />,
+      singlevaluelist: <DropDown key={field.code} field={field} />,
       multivaluelist: null,
-      media: <Media key={field.code} code={field.code} description={field.description} />
+      media: <Media key={field.code} field={field} />
     };
 
     return map[field.datatype];

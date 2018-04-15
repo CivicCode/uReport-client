@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Input = ({code, description}) => {
+const Input = ({ field }) => {
+  const { code, description } = field;
   return (
     <div className="Input">
       <label>

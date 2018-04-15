@@ -1,6 +1,7 @@
 import React from 'react';
 
-const TextArea = ({code, description}) => {
+const TextArea = ({ field }) => {
+  const { code, description } = field;
   return (
     <div className="TextArea">
       <label>
