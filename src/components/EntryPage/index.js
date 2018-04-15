@@ -1,7 +1,6 @@
 import React from 'react';
 
 import ServiceListQuery from '../ServiceListQuery';
-import './index.css';
 
 const EntryPage = () => {
   return (

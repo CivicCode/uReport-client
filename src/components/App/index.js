@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import EntryPage from '../EntryPage';
-import Form from '../FormContainer'
+import Form from '../FormContainer';
+
+import './index.css';
 
 class App extends Component {
   render() {

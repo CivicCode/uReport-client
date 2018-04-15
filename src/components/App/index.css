@@ -1,32 +1,30 @@
 /* this is probably already set */
-* {
+.App * {
   box-sizing: border-box;
 }
 
-.EntryPage {
+.App {
   display: flex;
   flex-direction: column;
   margin-bottom: 1em;
 }
 
-
-
 /* --- Container --- */
 
 
 /* TODO: We should try to match or rely on their container properties */
-.EntryPage .container {
+.App .container {
   width: 95vw;
   margin: 0 auto;
   max-width: 1060px;
 }
 
-.EntryPage .container::before {
+.App .container::before {
   display: table;
   content: "";
 }
 
-.EntryPage .container::after {
+.App .container::after {
   display: table;
   clear: both;
   content: "";

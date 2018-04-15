@@ -1,14 +1,40 @@
-.Form {
-  text-align: center
+/* --- Variables --- */
+
+
+
+:root {
+  --blue: #3f9dff;
+  --navy: #183365;
+  --grey: silver;
 }
 
-.headline {
-  color: #3f9dff;
+
+
+/* --- Component Styles --- */
+
+
+
+.Form {
+  text-align: left
+}
+
+.Form .headline {
+  color: var(--blue);
 }
 
 form input, select {
-  width: 50rem;
-  height: 3rem;
-  margin-bottom: 3rem;
-  margin-left: 1rem;
+  height: 2rem;
+}
+
+form .Input input {
+  width: 100%;
+}
+
+label {
+  display: block;
+}
+
+input, textarea {
+  border: 1px solid var(--grey);
+  max-width: 100%;
 }

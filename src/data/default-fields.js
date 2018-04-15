@@ -46,7 +46,7 @@ const defaultFields = [
   },
   {
     'variable': true,
-    'code': 'description',
+    'code': 'media',
     'datatype': 'media',
     'required': false,
     'datatype_description': '',

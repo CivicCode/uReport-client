@@ -2,10 +2,12 @@ import React from 'react';
 
 const Media = ({code, description}) => {
   return (
-    <label>
-      {description}:
+    <div className="Media">
+      <label>
+        {description}:
+      </label>
       <input type="file" name={code} />
-    </label>
+    </div>
   );
 };
 

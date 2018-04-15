@@ -2,10 +2,12 @@ import React from 'react';
 
 const TextArea = ({code, description}) => {
   return (
-    <label>
-      {description}:
+    <div className="TextArea">
+      <label>
+        {description}:
+      </label>
       <textarea type="text" name={code} />
-    </label>
+    </div>
   );
 };
 
