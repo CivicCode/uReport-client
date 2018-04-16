@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import Dropzone from 'react-dropzone';
+import httprequest from 'superagent';
+
+const CLOUDINARY_UPLOAD_PRESET = 'usxouxpq';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/open311/image/upload'
 
 class Form extends Component {
   constructor(props) {
@@ -10,6 +15,7 @@ class Form extends Component {
     this.handleDropDownChange = this.handleDropDownChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleMediaChange = this.handleMediaChange.bind(this);
   }
 
   handleDropDownChange(event) {
@@ -31,8 +37,38 @@ class Form extends Component {
     event.preventDefault();
   }
 
+  handleMediaChange(files) {
+    var file = files[0];
+    let upload = httprequest.post(CLOUDINARY_UPLOAD_URL)
+                            .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+                            .field('file', file);
+    upload.end((err, response) => {
+      if (err) {
+        console.log('Oh no, there was an error!  :(')
+      }
+      if (response.body.secure_url !== '') {
+        this.setState({
+          media_url: response.body.secure_url
+        })
+      }
+    })
+  }
+
+  renderImages() {
+    if (this.state.media_url) {
+      return (
+        <div>
+          <p>Uploaded Image</p>
+          <img src={this.state.media_url} alt="Uploaded Image" />
+        </div>
+      )
+    } else {
+      return (<p>No Images Uploaded</p>)
+    }
+  }
+
   getField(field) {
-    const { code, datatype, description, values, datatype_description } = field;
+    const { code, datatype, description, values } = field;
     switch (datatype) {
       case 'string':
       case 'number':
@@ -67,10 +103,14 @@ class Form extends Component {
       case 'media':
         return (
           <div className="Media" key={code}>
-            <label>
-              {description}:
-            </label>
-            <input type="file" name={code} />
+            <Dropzone
+              multiple={false}
+              accept="image/*"
+              onDrop={this.handleMediaChange}>
+              {description}
+            </Dropzone>
+            {/* <img src={this.state.media_url} alt="Uploaded Image" /> */}
+            {this.renderImages()}
           </div>
         );
       case 'singlevaluelist':

@@ -50,7 +50,7 @@ const defaultFields = [
     'datatype': 'media',
     'required': false,
     'datatype_description': '',
-    description: 'Upload a photo',
+    description: 'Click or drag to upload a photo',
     'order': 6
   }
 ];
