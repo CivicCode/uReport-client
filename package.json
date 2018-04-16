@@ -1,6 +1,6 @@
 {
   "name": "ureport-client",
-  "version": "0.1.0",
+  "license": "MIT",
   "dependencies": {
     "apollo-boost": "^0.1.4",
     "graphql": "^0.13.2",
