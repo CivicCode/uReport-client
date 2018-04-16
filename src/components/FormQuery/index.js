@@ -14,6 +14,7 @@ const formDefinitionQuery = (code) => gql`
     code,
     datatype,
     required,
+    description,
     datatype_description,
     values {
       key,
@@ -55,6 +56,9 @@ const FormQuery = ({match, location}) => {
         ({ loading, error, data }) => {
           if (loading) return <p>Loading...</p>;
           if (error) return <p>Error SAD</p>;
+            //console.log(data);
+            fields.push(...data.serviceDefinition);
+            //console.log(fields);
             return (
               <Form
                 code={getCode(splitUrl)}

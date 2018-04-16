@@ -32,7 +32,7 @@ class Form extends Component {
   }
 
   getField(field) {
-    const { code, datatype, description, values } = field;
+    const { code, datatype, description, values, datatype_description } = field;
     switch (datatype) {
       case 'string':
       case 'number':
@@ -74,6 +74,7 @@ class Form extends Component {
           </div>
         );
       case 'singlevaluelist':
+      case 'multivaluelist':
         return (
           <div className="DropDown" key={code}>
             <label>
