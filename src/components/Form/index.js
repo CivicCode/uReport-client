@@ -109,7 +109,6 @@ class Form extends Component {
               onDrop={this.handleMediaChange}>
               {description}
             </Dropzone>
-            {/* <img src={this.state.media_url} alt="Uploaded Image" /> */}
             {this.renderImages()}
           </div>
         );
