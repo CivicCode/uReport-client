@@ -19,6 +19,7 @@ class Form extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleMediaChange = this.handleMediaChange.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
     this.initState = this.initState.bind(this);
   }
 
@@ -67,6 +68,15 @@ class Form extends Component {
           media_url: response.body.secure_url
         })
       }
+    })
+  }
+
+  handleLocationChange({address, position}) {
+    const {lat, lng} = position;
+    this.setState({
+      address_string: address,
+      lat,
+      long: lng
     })
   }
 
@@ -132,17 +142,26 @@ class Form extends Component {
       case 'singlevaluelist':
       case 'multivaluelist':
         return (
-          <div className="DropDown" key={code}>
+          <div className="Select" key={code}>
             <label>
               {description}:
             </label>
             <select name={code} value={this.state[code]} onChange={this.handleSelectChange}>
               {values.map(
                 value => (
-                  <option value={value.key}>{value.name}</option>
+                  <option value={value.key} key={value.key}>{value.name}</option>
                 )
               )}
             </select>
+          </div>
+        );
+      case 'location':
+        return (
+          <div className="Location" key={code}>
+          <label>
+            {description}:
+          </label>
+            <MapPicker handleLocationChange={this.handleLocationChange}  />
           </div>
         );
       default:
@@ -156,7 +175,6 @@ class Form extends Component {
     return (
       <div className="Form">
         <h1 className="headline">Report {name}</h1>
-        <MapPicker />
         <form onSubmit={this.handleSubmit}>
         {
           fields.map(field => this.getField(field))
