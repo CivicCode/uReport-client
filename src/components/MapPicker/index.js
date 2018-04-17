@@ -32,8 +32,8 @@ class MapPicker extends Component {
         <h1>{this.state.address}</h1>
         <div>
           <LocationPicker
-            containerElement={ <div style={ {height: '100%'} } /> }
-            mapElement={ <div style={ {height: '200px'} } /> }
+            containerElement={ <div style={ {height: '100%', marginBottom: '2rem'} } /> }
+            mapElement={ <div style={ {height: '275px'} } /> }
             defaultPosition={defaultPosition}
             onChange={this.handleLocationChange}
           />
