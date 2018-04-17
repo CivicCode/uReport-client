@@ -9,13 +9,21 @@ class Form extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = this.initState(this.props.fields);
 
     this.getField = this.getField.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleMediaChange = this.handleMediaChange.bind(this);
+    this.initState = this.initState.bind(this);
+  }
+
+  initState(fields) {
+    return fields.reduce((acc, cv) => {
+      acc[cv.code] = '';
+      return acc;
+    }, {});
   }
 
   handleSelectChange(event) {
