@@ -11,17 +11,30 @@ class Form extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = this.initState(this.props.fields);
 
     this.getField = this.getField.bind(this);
-    this.handleDropDownChange = this.handleDropDownChange.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleMediaChange = this.handleMediaChange.bind(this);
+    this.initState = this.initState.bind(this);
   }
 
-  handleDropDownChange(event) {
-    this.setState({value: event.target.value});
+  initState(fields) {
+    return fields.reduce((acc, cv) => {
+      acc[cv.code] = '';
+      return acc;
+    }, {});
+  }
+
+  handleSelectChange(event) {
+    const target = event.target;
+    const name = target.name;
+
+    this.setState({
+      [name]: event.target.value
+    });
   }
 
   handleInputChange(event) {
@@ -83,7 +96,7 @@ class Form extends Component {
             <input
               type="text"
               name={code}
-              value={this.state.value}
+              value={this.state[code]}
               onChange={this.handleInputChange}
             />
           </div>
@@ -97,7 +110,7 @@ class Form extends Component {
             <textarea
               type="text"
               name={code}
-              value={this.state.value}
+              value={this.state[code]}
               onChange={this.handleInputChange}
             />
           </div>
@@ -121,7 +134,7 @@ class Form extends Component {
             <label>
               {description}:
             </label>
-            <select value={this.state.value} onChange={this.handleDropDownChange}>
+            <select name={code} value={this.state[code]} onChange={this.handleSelectChange}>
               {values.map(
                 value => (
                   <option value={value.key}>{value.name}</option>
