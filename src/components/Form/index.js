@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import httprequest from 'superagent';
 
+import MapPicker from '../MapPicker';
+
 const CLOUDINARY_UPLOAD_PRESET = 'usxouxpq';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/open311/image/upload'
 
@@ -139,6 +141,7 @@ class Form extends Component {
     return (
       <div className="Form">
         <h1 className="headline">Report {name}</h1>
+        <MapPicker />
         <form onSubmit={this.handleSubmit}>
         {
           fields.map(field => this.getField(field))
