@@ -24,6 +24,9 @@ class MapPicker extends Component {
 
     // Set new location
     this.setState({ position, address });
+
+    // Send the position and address back up to the parent component
+    this.props.handleLocationChange(this.state);
   }
 
   render () {

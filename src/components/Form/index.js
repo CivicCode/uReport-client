@@ -18,6 +18,7 @@ class Form extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleMediaChange = this.handleMediaChange.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
     this.initState = this.initState.bind(this);
   }
 
@@ -66,6 +67,15 @@ class Form extends Component {
           media_url: response.body.secure_url
         })
       }
+    })
+  }
+
+  handleLocationChange({address, position}) {
+    const {lat, lng} = position;
+    this.setState({
+      address_string: address,
+      lat,
+      long: lng
     })
   }
 
@@ -143,6 +153,15 @@ class Form extends Component {
             </select>
           </div>
         );
+      case 'location':
+        return (
+          <div className="Location" key={code}>
+          <label>
+            {description}:
+          </label>
+            <MapPicker handleLocationChange={this.handleLocationChange}  />
+          </div>
+        );
       default:
         return null;
     }
@@ -154,7 +173,6 @@ class Form extends Component {
     return (
       <div className="Form">
         <h1 className="headline">Report {name}</h1>
-        <MapPicker />
         <form onSubmit={this.handleSubmit}>
         {
           fields.map(field => this.getField(field))
