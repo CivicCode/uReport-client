@@ -128,14 +128,14 @@ class Form extends Component {
       case 'singlevaluelist':
       case 'multivaluelist':
         return (
-          <div className="DropDown" key={code}>
+          <div className="Select" key={code}>
             <label>
               {description}:
             </label>
             <select name={code} value={this.state[code]} onChange={this.handleSelectChange}>
               {values.map(
                 value => (
-                  <option value={value.key}>{value.name}</option>
+                  <option value={value.key} key={value.key}>{value.name}</option>
                 )
               )}
             </select>
