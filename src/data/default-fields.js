@@ -1,12 +1,21 @@
 const defaultFields = [
   {
     'variable': true,
+    'code': 'address_string',
+    'datatype': 'location',
+    'required': true,
+    'datatype_description': '',
+    'description': 'Drag the marker to the location for this report',
+    'order': 1
+  },
+  {
+    'variable': true,
     'code': 'firstName',
     'datatype': 'string',
     'required': true,
     'datatype_description': '',
-    'description': 'First Name',
-    'order': 1
+    'description': 'First name',
+    'order': 2
   },
   {
     'variable': true,
@@ -14,8 +23,8 @@ const defaultFields = [
     'datatype': 'string',
     'required': true,
     'datatype_description': '',
-    description: 'Last Name',
-    'order': 2
+    description: 'Last name',
+    'order': 3
   },
   {
     'variable': true,
@@ -24,7 +33,7 @@ const defaultFields = [
     'required': true,
     'datatype_description': '',
     description: 'Phone',
-    'order': 3
+    'order': 4
   },
   {
     'variable': true,
@@ -33,7 +42,7 @@ const defaultFields = [
     'required': true,
     'datatype_description': '',
     'description': 'Email',
-    'order': 4
+    'order': 5
   },
   {
     'variable': true,
@@ -42,7 +51,7 @@ const defaultFields = [
     'required': true,
     'datatype_description': '',
     description: 'Description',
-    'order': 5
+    'order': 6
   },
   {
     'variable': true,
@@ -51,7 +60,7 @@ const defaultFields = [
     'required': false,
     'datatype_description': '',
     description: 'Click or drag to upload a photo',
-    'order': 6
+    'order': 7
   }
 ];
 
