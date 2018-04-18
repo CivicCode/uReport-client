@@ -82,3 +82,27 @@ input[type='submit'] {
   background-position: 0.5em center;
   background-size: 1em 1em;
 }
+
+.backToTop {
+  width: 20%;
+  height: 2em;
+  font-family: "Roboto", sans-serif;
+  background: var(--navy);
+  border: 1px solid var(--navy);
+  border-radius: 0.2em;
+  box-sizing: content-box;
+  color: #fff;
+  display: inline-block;
+  line-height: 1.2em;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 5rem;
+  padding: 0.5em 1em;
+  font-size: 1.125rem;
+  font-weight: normal;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: 0.5em center;
+  background-size: 1em 1em;
+  cursor: pointer;
+}
